@@ -1,5 +1,8 @@
-from random import choice
+#!/usr/bin/env python3
 
+from random import choice
+#what about CCV for 'sto' or CCCV 'stri'
+#is there a reason for this?
 class MorphemeGeneratorMixin:
     def map_syll_to_structure(self, syll):
         if len(syll) == 2:

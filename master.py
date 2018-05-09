@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from morpheme_generator import MorphemeGeneratorMixin
 from phono import Phonology
 from morphology import Nominal, Verbal, Other

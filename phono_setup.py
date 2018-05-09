@@ -1,7 +1,7 @@
 from random import randint, sample
 #random.seed()
 
-
+#I don;t think this is needed
 V = ['a', 'e', 'i', 'o', 'u']
 C = ['b', 'k', 'd', 'f', 'g', 'j', 'l', 'm', 'n', 'r', 'p', 's', 'z']
 

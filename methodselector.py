@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from random import randint
 
 
@@ -22,11 +24,12 @@ class MethodSelector:
         """
         if not hasattr(self, "_likelihoods"):
             self._likelihoods = {}
-        for item in likelihoods_map.items():
+        for item in likelihoods_map.items(): #why is this [0] for loop?
             self._likelihoods[item[0]] = self.__likelihoods_map_to_list(self.__validate_likelihoods(item[0], item[1]))
 
     @staticmethod
-    def __likelihoods_map_to_list(likelihoods_map_entry):
+    def
+    (likelihoods_map_entry):
         """
         Translates an entry in a likelihoods mapping to a list consisting of references to each method in the mapping
         to its likelihood. For example, given a mapping {method1: 30, method2: 20, method3: 50}, the list would consist
@@ -91,5 +94,3 @@ class MethodSelector:
         """
         adjustment = self.adjustments.get('{}_adjustment'.format(group_label), 0)
         return getattr(self, self._likelihoods[group_label][randint(0, 100) + adjustment])
-
-

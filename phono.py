@@ -1,17 +1,26 @@
-from random import choice, randint
+#!/usr/bin/env python3
+#gonna make everything a py3 version
 
+from random import choice, randint
 from methodselector import MethodSelector
+
+
+'''I need to figure out how everything is working and
+make log info available, we did not take the notes we should have'''
+
+
 
 
 class Phonology(MethodSelector):
     def __init__(self, likelihoods_dict=None, adjustments_dict=None):
-        self.base_vowels = ['a', 'i', 'u']
-        self.extra_vowels = ['e', 'o', 'y', 'ə', 'ɪ', 'ɒ', 'ɑ', 'œ', 'ʏ', 'ɯ' 'ʉ', 'ɨ', 'ɵ', 'ɛ', 'ʊ', 'ɔ', 'æ',
-                             'ɐ', 'ɜ', 'ʌ', 'ø']
-        self.base_consonants = ['p', 't', 'k']
-        self.extra_consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't',
-                                 'v', 'w', 'x', 'z', 'ʍ', 'ɹ', 'θ', 'ʃ', 'ð', 'ɸ', 'ɣ', 'ɥ', 'ɟ', 'ɬ', 'ʒ', 'χ',
-                                 'ç', 'ʋ', 'β', 'ɲ', 'ʀ', 'ɢ', 'ʟ', 'ʙ', 'ɴ', 'ɽ', 'ʈ', 'ʂ', 'ʑ', 'ŋ', 'ɱ']
+        self.base_vowels = ['a', 'i', 'u']#vowels found in all human langauge
+        self.extra_vowels = ['e', 'o', 'y', 'ə', 'ɪ', 'ɒ', 'ɑ', 'œ', 'ʏ', 'ɯ' 'ʉ', 'ɨ', 'ɵ',
+         'ɛ', 'ʊ', 'ɔ', 'æ', 'ɐ', 'ɜ', 'ʌ', 'ø']#other vowels
+        self.base_consonants = ['p', 't', 'k']#found in all language
+        self.extra_consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p',
+         'q', 'r', 's', 't','v', 'w', 'x', 'z', 'ʍ', 'ɹ', 'θ', 'ʃ', 'ð', 'ɸ', 'ɣ', 'ɥ', 'ɟ',
+          'ɬ', 'ʒ', 'χ', 'ç', 'ʋ', 'β', 'ɲ', 'ʀ', 'ɢ', 'ʟ', 'ʙ', 'ɴ', 'ɽ', 'ʈ', 'ʂ', 'ʑ',
+           'ŋ', 'ɱ']#other consonants
         self.base_likelihoods = {
             "v": {
                 "v2": 25,
@@ -46,7 +55,8 @@ class Phonology(MethodSelector):
         if isinstance(adjustments_dict, dict):
             self.adjustments.update(adjustments_dict)
         self.inventory = self.get_inventory()
-
+        '''it looks like base vowels are not gaurenteed, should
+        be to begin and others are optional'''
     def v2(self):
         i = randint(0, 2)
         return self.base_vowels.pop(i)
@@ -71,6 +81,8 @@ class Phonology(MethodSelector):
             inventory = self.get_rand_cons(inventory)
         return inventory
 
+    '''I believe this is to decide wich consonant are
+    the extras is they get mapped to the fake language'''
     def c3(self):
         return self.base_consonants
 

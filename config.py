@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+#some of this is duped from phono, should unify
 CONFIG = {
     'redis':
         {},

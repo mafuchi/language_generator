@@ -1,5 +1,6 @@
-from random import choice
+#!/usr/bin/env python3
 
+from random import choice
 from methodselector import MethodSelector
 from morpheme_generator import MorphemeGeneratorMixin
 
